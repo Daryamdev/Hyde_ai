@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charset="UTF-8"><title>Hyde Test</title>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#EBE1DF">
+  </head>
+  <body>
+    <h2>Hyde AI</h2>
+    <input type="text" id="input" value="Αsk a question" />
+    <button onclick="send()">Отправить</button>
+    <pre id="response"style='white-space: pre-wrap;'></pre>
+    
+    <script>
+      async function send() {
+        const input = document.getElementById("input").value;
+        const res = await fetch("http://127.0.0.1:8000/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ user_input: input })
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          document.getElementById("response").innerText = data.response;
+        } else {
+          document.getElementById("response").innerText =
+            "Ошибка: " + res.status + " " + res.statusText;
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    
+      <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+              console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(error => {
+              console.error('Service Worker registration failed:', error);
+            });
+        }
+
+
+
+
+      </script>
+  </body>
+</html>

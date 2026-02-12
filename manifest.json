@@ -1,0 +1,25 @@
+{
+    "name":"Hyde AI",
+    "short_name":"Hyde",
+    "start_url":"./test.html",
+    "display":"standalone",
+    "background_color":"#EBE1DF",
+    "theme_color":"#EBE1DF",
+    "description":"Hyde is your own filthy AI demon",
+    "icons":[
+        {
+            "src":"static/scull.png",
+            "sizes":"512x512",
+            "type":"image/png"
+        }
+    ]
+
+
+
+
+
+
+
+
+
+}

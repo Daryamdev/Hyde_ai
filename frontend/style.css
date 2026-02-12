@@ -1,0 +1,23 @@
+ 
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      response{
+        white-space: pre-wrap;
+      }
+      input {
+        width: 300px;
+        padding: 8px;
+        margin-right: 10px;
+      }
+      button {
+        padding: 8px 16px;
+      }
+      pre {
+        background-color: #b0bea4;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      
